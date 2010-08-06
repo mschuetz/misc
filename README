@@ -1,0 +1,4 @@
+== cdbackup.rb ==
+a script for backing up files removable media.
+Usage: dbus-monitor | cddbackup.rb somedirectory
+insert media, wait for it being copied and ejected, insert next
