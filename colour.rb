@@ -43,12 +43,8 @@ def get_colours(str)
 end
 
 colour = get_colours(ARGV[0])
-regex = Regexp.new("(^.*)(#{ARGV[1]})(.*$)")
+regex = Regexp.new("(#{ARGV[1]})")
 
 STDIN.each_line do  |line|
-	if line=~regex
-		puts "#{$1}#{colour}#{$2}#{reset_colours}#{$3}"
-	else
-		print line
-	end
+  print line.gsub(regex, "#{colour}\\1#{reset_colours}")
 end
