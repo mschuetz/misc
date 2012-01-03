@@ -10,3 +10,9 @@ creates an m3u playlist from a podcast
 i wrote this script when audacity crashed in the middle of a long
 recording session to create an audacity project file from the .au
 files that audacity stores in /tmp
+
+#colours.rb
+applies colouring to text on stdin similar to grep but outputs
+non-matching lines as well.
+Usage: cmd | colour.rb colour_spec regex
+Example: ls -la | colour.rb bg_red,white " $USER "
