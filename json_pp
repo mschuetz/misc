@@ -7,7 +7,7 @@ def rewrite_dates(obj)
         obj.each{|elem| rewrite_dates(elem)}
     elsif obj.kind_of? Hash
         obj.each_pair{|k, v|
-            if v.kind_of?(Numeric) && k=~/date/i
+            if v.kind_of?(Numeric) && k=~/(date|time)/i
                 # if date is unreasonably far in the future, it's probably millisecond precision instead of seconds
                 v/=1000 if v>134027890200
                 obj[k] = Time.at(v)
