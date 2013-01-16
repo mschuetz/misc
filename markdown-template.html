@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <link href="http://kevinburke.bitbucket.org/markdowncss/markdown.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="content"></div>
+        <script id="markdown" type="text/markdown">
+
+# Insert
+
+* markdown
+* content
+* here
+
+        </script>
+        
+         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+         <script src="//pagedown.googlecode.com/hg/Markdown.Converter.js"></script>
+         <script type="application/javascript">
+             $(function() {
+                 var converter = new Markdown.Converter()
+                 var source = $('#markdown').html()
+                 $('#content').html(converter.makeHtml(source));
+             });
+         </script>
+      </body>
+</html>
+
